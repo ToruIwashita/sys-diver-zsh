@@ -1,0 +1,4 @@
+BUFFER="${EDITOR:-vim} $BUFFER"
+zle accept-line
+
+# vim: ft=zsh

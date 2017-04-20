@@ -1,0 +1,10 @@
+[[ $1 != on ]] && return 0
+
+typeset -ga chpwd_functions
+
+setopt autopushd
+
+## auto-execution of functions
+chpwd_functions+='sd-ls'
+
+# vim: ft=zsh

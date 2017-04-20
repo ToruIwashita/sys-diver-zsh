@@ -1,0 +1,12 @@
+local cmd
+local -a args
+args=("${(z)BUFFER}")
+
+if (( ${#args[$#args]} )); then
+  cmd="cat ${args[$#args]}"
+
+  zle -I
+  print -s $cmd && eval $cmd
+fi
+
+# vim: ft=zsh

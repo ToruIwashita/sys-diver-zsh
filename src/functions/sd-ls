@@ -1,0 +1,13 @@
+[[ $dirstack[1]:h != $PWD ]] || return 0
+
+if ls -F --color &>/dev/null; then
+  ls -F --color
+elif gls -F --color &>/dev/null; then
+  gls -F --color
+elif ls -G -F &>/dev/null; then
+  ls -G -F
+else
+  ls
+fi
+
+# vim: ft=zsh
