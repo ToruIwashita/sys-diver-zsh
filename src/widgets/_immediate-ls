@@ -1,0 +1,9 @@
+local cmd
+local -a args
+args=("${(z)BUFFER}")
+cmd="sd-ls ${args[$#args]}"
+
+zle -I
+print -s $cmd && eval $cmd
+
+# vim: ft=zsh

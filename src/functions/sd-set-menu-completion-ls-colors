@@ -1,0 +1,5 @@
+[[ -z "$1" ]] && return 0
+
+zstyle ':completion:menu-complete-files:*' list-colors $1
+
+# vim: ft=zsh
