@@ -1,7 +1,7 @@
 local precmd_func
 local -aU reply
 
-print -s 'cd ..' && cd ..
+cd ..
 
 if (( ${+functions[chpwd_recent_filehandler]} && ${+functions[chpwd_recent_add]} )); then
   chpwd_recent_filehandler
