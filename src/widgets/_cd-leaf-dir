@@ -1,19 +1,14 @@
-local precmd_func dest cmd
+local dest
 local -a args
-local -aU reply
 args=("${(z)BUFFER}")
 
-dest=$args[$#args]
-dest=${dest//\\/}
+dest=${${args[$#args]}//\\/}
+[[ ! -d $dest ]] && dest=$dest:h
 
-# cd .を回避する
-if (( ! $#dest )); then
+if (( ! $#dest )) || [[ $dest == '.' ]]; then
   zle -I
-  zle kill-whole-line
   return
 fi
-
-[[ ! -d $dest ]] && dest=$dest:h
 
 if [[ $options[autocd] != on ]]; then
   BUFFER="cd $dest"
@@ -22,7 +17,5 @@ else
 fi
 
 zle accept-line
-
-# [[ $autocd_option != on ]] && setopt noautocd
 
 # vim: ft=zsh

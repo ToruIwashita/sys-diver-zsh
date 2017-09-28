@@ -1,44 +1,33 @@
-integer resource_index changed
-local precmd_func file_path dest
+integer resource_index
+local resource dest
 local -a args
-local -aU reply
 args=("${(z)BUFFER}")
 
 resource_index=$#args
-file_path=$args[$resource_index]
-if [[ $file_path =~ '^~' ]]; then
-  dest=$HOME${file_path#*~}
-else
-  dest=$file_path
-fi
-dest=${dest//\\/}
+resource=$args[$resource_index]
 
-zle -I
-zle kill-whole-line
-
-(( ! $#dest )) && return
-
-cd $dest 2>/dev/null && (( changed++ ))
-if (( changed )); then
-  print -s "cd $dest"
+if [[ -d $resource ]]; then
+  dest=$resource
   args[$resource_index]=''
-elif [[ $file_path:h != '.' ]]; then
-  dest=$dest:h
-  cd $dest && print -s "cd $dest"
-  args[$resource_index]=$file_path:t
+else
+  dest=$resource:h
+  args[$resource_index]=$resource:t
 fi
 
-if (( ${+functions[chpwd_recent_filehandler]} && ${+functions[chpwd_recent_add]} )); then
-  chpwd_recent_filehandler
-  chpwd_recent_add $PWD && chpwd_recent_filehandler $reply
+if (( ! $#dest )) || [[ $dest == '.' ]]; then
+  zle -I
+  return
 fi
-
-(( ${+functions[precmd]} )) && precmd
-for precmd_func in $precmd_functions; do
-  $precmd_func
-done
 
 BUFFER=$args
-zle beginning-of-line
+zle push-line
+
+if [[ $options[autocd] != on ]]; then
+  BUFFER="cd $dest"
+else
+  BUFFER=$dest
+fi
+
+zle accept-line
 
 # vim: ft=zsh
