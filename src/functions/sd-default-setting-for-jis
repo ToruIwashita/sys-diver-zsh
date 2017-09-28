@@ -2,6 +2,7 @@ local prefix
 
 prefix="${1:-$SILENT_DIVER_PREFIX}"
 
+setopt autocd
 setopt menucomplete
 setopt completeinword
 

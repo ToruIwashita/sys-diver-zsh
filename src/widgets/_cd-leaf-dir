@@ -1,28 +1,21 @@
-local precmd_func dest
+local dest
 local -a args
-local -aU reply
 args=("${(z)BUFFER}")
 
-dest=$args[$#args]
-[[ $dest =~ '^~' ]] && dest=$HOME${dest#*~}
-dest=${dest//\\/}
+dest=${${args[$#args]}//\\/}
+[[ ! -d $dest ]] && dest=$dest:h
 
-zle -I
-zle kill-whole-line
-
-(( ! $#dest )) && return
-
-print -s "cd $dest"
-cd $dest 2>/dev/null || cd $dest:h
-
-if (( ${+functions[chpwd_recent_filehandler]} && ${+functions[chpwd_recent_add]} )); then
-  chpwd_recent_filehandler
-  chpwd_recent_add $PWD && chpwd_recent_filehandler $reply
+if (( ! $#dest )) || [[ $dest == '.' ]]; then
+  zle -I
+  return
 fi
 
-(( ${+functions[precmd]} )) && precmd
-for precmd_func in $precmd_functions; do
-  $precmd_func
-done
+if [[ $options[autocd] != on ]]; then
+  BUFFER="cd $dest"
+else
+  BUFFER=$dest
+fi
+
+zle accept-line
 
 # vim: ft=zsh
