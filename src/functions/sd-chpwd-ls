@@ -1,0 +1,5 @@
+[[ $dirstack[1]:h != $PWD ]] || return 0
+
+sd-ls
+
+# vim: ft=zsh

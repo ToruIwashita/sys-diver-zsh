@@ -5,6 +5,6 @@ typeset -ga chpwd_functions
 setopt autopushd
 
 ## auto-execution of functions
-chpwd_functions+='sd-ls'
+chpwd_functions+='sd-chpwd-ls'
 
 # vim: ft=zsh

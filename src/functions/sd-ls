@@ -1,5 +1,3 @@
-[[ $dirstack[1]:h != $PWD ]] || return 0
-
 if ls -F --color &>/dev/null; then
   ls -F --color
 elif gls -F --color &>/dev/null; then
