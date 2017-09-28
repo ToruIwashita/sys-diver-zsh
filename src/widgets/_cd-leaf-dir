@@ -1,28 +1,28 @@
-local precmd_func dest
+local precmd_func dest cmd
 local -a args
 local -aU reply
 args=("${(z)BUFFER}")
 
 dest=$args[$#args]
-[[ $dest =~ '^~' ]] && dest=$HOME${dest#*~}
 dest=${dest//\\/}
 
-zle -I
-zle kill-whole-line
-
-(( ! $#dest )) && return
-
-print -s "cd $dest"
-cd $dest 2>/dev/null || cd $dest:h
-
-if (( ${+functions[chpwd_recent_filehandler]} && ${+functions[chpwd_recent_add]} )); then
-  chpwd_recent_filehandler
-  chpwd_recent_add $PWD && chpwd_recent_filehandler $reply
+# cd .を回避する
+if (( ! $#dest )); then
+  zle -I
+  zle kill-whole-line
+  return
 fi
 
-(( ${+functions[precmd]} )) && precmd
-for precmd_func in $precmd_functions; do
-  $precmd_func
-done
+[[ ! -d $dest ]] && dest=$dest:h
+
+if [[ $options[autocd] != on ]]; then
+  BUFFER="cd $dest"
+else
+  BUFFER=$dest
+fi
+
+zle accept-line
+
+# [[ $autocd_option != on ]] && setopt noautocd
 
 # vim: ft=zsh
