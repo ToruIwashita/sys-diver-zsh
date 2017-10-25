@@ -1,9 +1,20 @@
-local dest
+local resource semidest dest
 local -a args
 args=("${(z)BUFFER}")
 
-dest=${${args[$#args]}//\\/}
-[[ ! -d $dest ]] && dest=$dest:h
+resource=${${args[$#args]}//\\/}
+
+if [[ $resource =~ '^~' ]]; then
+  semidest=$HOME${resource#*~}
+else
+  semidest=$resource
+fi
+
+if [[ -d $semidest ]]; then
+  dest=$resource
+else
+  dest=$resource:h
+fi
 
 if (( ! $#dest )) || [[ $dest == '.' ]]; then
   zle -I

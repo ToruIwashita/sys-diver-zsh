@@ -1,12 +1,18 @@
 integer resource_index
-local resource dest
+local resource semidest dest
 local -a args
 args=("${(z)BUFFER}")
 
 resource_index=$#args
 resource=$args[$resource_index]
 
-if [[ -d $resource ]]; then
+if [[ $resource =~ '^~' ]]; then
+  semidest=$HOME${resource#*~}
+else
+  semidest=$resource
+fi
+
+if [[ -d $semidest ]]; then
   dest=$resource
   args[$resource_index]=''
 else
