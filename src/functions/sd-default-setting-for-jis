@@ -12,6 +12,7 @@ bindkey -v '^o' cd-leaf-dir
 bindkey -v '^_' cdup
 bindkey -v "$prefix^i" immediate-ls
 bindkey -v "$prefix^j" immediate-cat
+bindkey -v "$prefix^k" menu-complete-recent-dirs
 bindkey -v "$prefix^l" start-editor
 bindkey -v "$prefix^o" cd-leaf-dir-and-insert-leaf-file-in-prompt
 
