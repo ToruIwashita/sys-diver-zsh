@@ -2,5 +2,3 @@ zle -C menu-complete-files menu-complete _generic
 zstyle ':completion:menu-complete-files:*' completer _files
 zstyle ':completion:menu-complete-files:*' menu select interactive
 zstyle ':completion:menu-complete-files:*' list-colors ${(s.:.)SILENT_DIVER_LS_COLORS}
-
-# vim: ft=zsh
