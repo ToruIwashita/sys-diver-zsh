@@ -1,0 +1,35 @@
+local prefix
+
+prefix="${1:-$SILENT_DIVER_PREFIX}"
+
+setopt autocd
+setopt menucomplete
+setopt completeinword
+
+bindkey -v '^k' menu-complete-files
+bindkey -v '^l' edge-start-editor
+bindkey -v '^o' cd-leaf-dir
+bindkey -v '^^' cdup
+bindkey -v "$prefix^i" immediate-ls
+bindkey -v "$prefix^j" immediate-cat
+bindkey -v "$prefix^k" menu-complete-recent-dirs
+bindkey -v "$prefix^l" start-editor
+bindkey -v "$prefix^o" cd-leaf-dir-and-insert-leaf-file-in-prompt
+
+bindkey -M menuselect '^a' beginning-of-line
+bindkey -M menuselect '^b' backward-char
+bindkey -M menuselect '^e' end-of-line
+bindkey -M menuselect '^f' forward-char
+bindkey -M menuselect '^g' .send-break
+bindkey -M menuselect '^i' forward-char
+bindkey -M menuselect '^j' .accept-line
+bindkey -M menuselect '^k' infer-next-history
+bindkey -M menuselect '^m' accept-line
+bindkey -M menuselect '^n' down-line-or-history
+bindkey -M menuselect '^p' up-line-or-history
+bindkey -M menuselect '^r' history-incremental-search-forward
+bindkey -M menuselect '^u' send-break
+bindkey -M menuselect '^]' accept-and-hold
+bindkey -M menuselect "$prefix" vi-insert
+
+# vim: ft=zsh
