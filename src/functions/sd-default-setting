@@ -1,6 +1,6 @@
 local prefix
 
-prefix="${1:-$SILENT_DIVER_PREFIX}"
+prefix="${1:-$SYS_DIVER_PREFIX}"
 
 setopt autocd
 setopt menucomplete
