@@ -61,7 +61,7 @@ sd-set-splash-dive on
 
 ![sys-diver](https://raw.githubusercontent.com/wiki/ToruIwashita/sys-diver-zsh/images/sys-diver-zsh-demo-splash-dive.gif)  
 
-### Cosutom Setting  
+### Cosutom setting  
 
 Since `sd-default-setting` makes the following settings, if you need to change, change the settings referring to the following.  
 
@@ -97,7 +97,7 @@ bindkey -M menuselect '^]' accept-and-hold
 bindkey -M menuselect '^z' vi-insert  
 ```  
 
-## Functions and Widgets  
+## Functions and widgets  
 
 ### Functions  
 
