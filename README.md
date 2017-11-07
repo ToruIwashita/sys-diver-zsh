@@ -157,4 +157,4 @@ Completion with `_files` as completer.
 
 #### - menu-complete-recent-dirs  
 
-Completion of directory history saved by cdr.  
+Completion of directory history saved by `cdr`.  
