@@ -101,15 +101,15 @@ bindkey -M menuselect '^z' vi-insert
 
 ### Functions  
 
-#### - sd-default-setting  
+#### - `sd-default-setting`  
 
 Enable default settings.  
 
-#### - sd-set-splash-dive  
+#### - `sd-set-splash-dive`  
 
 Execute `ls` command after directory change.  
 
-#### - sd-set-menu-completion-ls-colors  
+#### - `sd-set-menu-completion-ls-colors`  
 
 Change color of list in menuselect.  
 
@@ -121,40 +121,40 @@ sd-set-menu-completion-ls-colors '0:di=01;34:ln=01;36:mh=00:pi=40;'
 
 ### Widgets  
 
-#### - cd-leaf-dir  
+#### - `cd-leaf-dir`  
 
 Change to the directory at the end of the path with the end of the command line as the path. If the target is a file path (e.g. `works/tmp.txt`), change to the parent directory (e.g. `works/`) of the file.  
 
-#### - cd-leaf-dir-and-insert-leaf-file-in-prompt  
+#### - `cd-leaf-dir-and-insert-leaf-file-in-prompt`  
 
 It behaves almost like cd-leaf-dir. However, if a path such as `works/tmp.txt` is the target, change to `works/` and insert `tmp.txt` at the prompt.  
 
-#### - cdup  
+#### - `cdup`  
 
 Change parent directory.  
 
-#### - edge-start-editor  
+#### - `edge-start-editor`  
 
 Start the editor. If strings is inputted to the command line, start with the string at the end of the command line as an argument.  
 
-#### - start-editor  
+#### - `start-editor`  
 
 Start the editor. If strings is inputted to the command line, all strings are activated as arguments.  
 
-#### - immediate-cat  
+#### - `immediate-cat`  
 
 Execute `cat`command  with the sring at the end of the command line as an argument.  
 
-#### - immediate-ls  
+#### - `immediate-ls`  
 
 Execute `ls`command  with the sring at the end of the command line as an argument.  
 
 ### Completion widgets  
 
-#### - menu-complete-files  
+#### - `menu-complete-files`  
 
 Completion with `_files` as completer.  
 
-#### - menu-complete-recent-dirs  
+#### - `menu-complete-recent-dirs`  
 
 Completion of directory history saved by `cdr`.  
