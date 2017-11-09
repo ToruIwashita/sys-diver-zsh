@@ -1,5 +1,7 @@
 # sys-diver-zsh  
 
+Dive into the system smoothy.  
+
 The sys-diver enables directory change and editor startup with only key operations using widgits without typing `cd /to/dir/path/` or `vim /to/file/path` on the command line. This plugin provides a smooth command line operation.  
 
 ## Installation  
