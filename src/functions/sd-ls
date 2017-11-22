@@ -1,11 +1,11 @@
 if ls -F --color &>/dev/null; then
-  ls -F --color
+  ls -F --color $*
 elif gls -F --color &>/dev/null; then
-  gls -F --color
+  gls -F --color $*
 elif ls -G -F &>/dev/null; then
-  ls -G -F
+  ls -G -F $*
 else
-  ls
+  ls $*
 fi
 
 # vim: ft=zsh
