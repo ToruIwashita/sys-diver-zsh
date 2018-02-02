@@ -12,6 +12,13 @@ When using [antigen](https://github.com/zsh-users/antigen), please add the follo
 antigen bundle ToruIwashita/sys-diver-zsh  
 ```  
 
+When installing manually, it is as follows  
+
+```  
+git clone git@github.com:ToruIwashita/sys-diver-zsh.git /path/to/sys-diver-zsh  
+echo 'source /path/to/sys-diver-zsh/sys-diver.plugin.zsh' >> ~/.zshrc  
+```  
+
 ## Usage  
 
 The simple way is to add the following code to zshrc.  
