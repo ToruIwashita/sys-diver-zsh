@@ -6,7 +6,7 @@ The sys-diver enables directory change and editor startup with only key operatio
 
 ## Installation  
 
-When using antigen, please add the following code to zshrc.  
+When using [antigen](https://github.com/zsh-users/antigen), please add the following code to zshrc.  
 
 ```  
 antigen bundle ToruIwashita/sys-diver-zsh  
