@@ -144,11 +144,11 @@ Change parent directory.
 
 #### - `edge-start-editor`  
 
-Start the editor. If strings is inputted to the command line, start with the string at the end of the command line as an argument.  
+Start the editor set in `EDITOR` environment variable. If strings is inputted to the command line, start with the string at the end of the command line as an argument.  
 
 #### - `start-editor`  
 
-Start the editor. If strings is inputted to the command line, all strings are activated as arguments.  
+Start the editor set in `EDITOR` environment variable. If strings is inputted to the command line, all strings are activated as arguments.  
 
 #### - `immediate-cat`  
 
