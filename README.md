@@ -40,7 +40,7 @@ By adding this you can get a smooth command line operation.
 
 ### Example of use  
 
-#### 1. Start completion by `^k`, expand next completions under the directory selected by `^k` again and change directory by `^o`  
+#### 1. Start completion by `^k`, expand next completion candidates under the directory selected by `^k` again and change the directory by `^o`  
 
 ![sys-diver](https://raw.githubusercontent.com/wiki/ToruIwashita/sys-diver-zsh/images/sys-diver-zsh-demo-cd-1.gif)  
 
@@ -56,7 +56,7 @@ By adding this you can get a smooth command line operation.
 
 ![sys-diver](https://raw.githubusercontent.com/wiki/ToruIwashita/sys-diver-zsh/images/sys-diver-zsh-demo-editor-2.gif)  
 
-#### 5. `^z^k` expands the recent directories used in `cdr` as a completions  
+#### 5. `^z^k` start the recent directory completion  
 
 ![sys-diver](https://raw.githubusercontent.com/wiki/ToruIwashita/sys-diver-zsh/images/sys-diver-zsh-demo-recent-dir-completion.gif)  
 
