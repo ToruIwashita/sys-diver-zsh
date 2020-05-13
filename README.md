@@ -83,6 +83,7 @@ bindkey -v '^k' menu-complete-files
 bindkey -v '^l' edge-start-editor  
 bindkey -v '^o' cd-leaf-dir  
 bindkey -v '^^' cdup  
+bindkey -v '^zi' immediate-vls  
 bindkey -v '^z^i' immediate-ls  
 bindkey -v '^z^j' immediate-cat  
 bindkey -v '^z^k' menu-complete-recent-dirs  
@@ -152,11 +153,15 @@ Start the editor set in `EDITOR` environment variable. If strings is inputted to
 
 #### - `immediate-cat`  
 
-Execute `cat`command  with the sring at the end of the command line as an argument.  
+Execute `cat`command with the sring at the end of the command line as an argument.  
 
 #### - `immediate-ls`  
 
-Execute `ls`command  with the sring at the end of the command line as an argument.  
+Execute `ls`command with the sring at the end of the command line as an argument.  
+
+#### - `immediate-vls`  
+
+Execute `ls -1`command with the sring at the end of the command line as an argument.  
 
 ### Completion widgets  
 
