@@ -10,6 +10,7 @@ bindkey -v '^k' menu-complete-files
 bindkey -v '^l' edge-start-editor
 bindkey -v '^o' cd-leaf-dir
 bindkey -v '^_' cdup
+bindkey -v "${prefix}i" immediate-vls
 bindkey -v "$prefix^i" immediate-ls
 bindkey -v "$prefix^j" immediate-cat
 bindkey -v "$prefix^k" menu-complete-recent-dirs

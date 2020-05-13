@@ -1,0 +1,9 @@
+local -a args
+args=("${(z)BUFFER}")
+
+zle push-line
+
+BUFFER="sd-ls -1 ${args[$#args]}"
+zle accept-line
+
+# vim: ft=zsh
