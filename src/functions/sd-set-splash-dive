@@ -1,4 +1,5 @@
 [[ $1 != on ]] && return 0
+[[ -o interactive ]] || return 0
 
 typeset -ga chpwd_functions
 

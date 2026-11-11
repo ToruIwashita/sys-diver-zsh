@@ -117,7 +117,7 @@ Enable default settings.
 
 #### - `sd-set-splash-dive`  
 
-Execute `ls` command after directory change.  
+Execute `ls` command after directory change. It takes effect only in interactive shells.  
 
 #### - `sd-set-menu-completion-ls-colors`  
 
